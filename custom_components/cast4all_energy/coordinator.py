@@ -52,7 +52,6 @@ class Cast4AllDataCoordinator(DataUpdateCoordinator[dict[str, Any]]):
             _LOGGER,
             name=DOMAIN,
             update_interval=timedelta(seconds=scan_interval),
-            config_entry=entry,
         )
 
     async def _async_setup(self) -> None:
