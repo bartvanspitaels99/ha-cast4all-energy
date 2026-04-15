@@ -1,0 +1,12 @@
+{
+  "domain": "cast4all_energy",
+  "name": "Cast4All Energy",
+  "codeowners": ["@bartvanspitaels99"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/bartvanspitaels99/ha-cast4all-energy",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "version": "1.0.0"
+}

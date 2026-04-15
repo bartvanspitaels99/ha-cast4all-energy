@@ -1,0 +1,44 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Cast4All Energy",
+        "description": "Enter your SIMPL GO / FlowBuddy credentials",
+        "data": {
+          "username": "Email",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate",
+        "description": "Your Cast4All credentials have expired. Please re-enter them.",
+        "data": {
+          "username": "Email",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid credentials",
+      "cannot_connect": "Cannot connect to Cast4All API",
+      "no_installation": "No installation found for this account",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "This installation is already configured"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "pv1_power": { "name": "PV 1 Power" },
+      "pv2_power": { "name": "PV 2 Power" },
+      "solar_power_total": { "name": "Solar Power Total" },
+      "grid_power": { "name": "Grid Power" },
+      "total_consumption": { "name": "Total Consumption" },
+      "pv1_energy": { "name": "PV 1 Energy" },
+      "pv2_energy": { "name": "PV 2 Energy" },
+      "grid_consumption": { "name": "Grid Consumption" },
+      "grid_injection": { "name": "Grid Injection" }
+    }
+  }
+}
