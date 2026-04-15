@@ -92,15 +92,18 @@ class Cast4AllDataCoordinator(DataUpdateCoordinator[dict[str, Any]]):
 
     async def _async_update_data(self) -> dict[str, Any]:
         """Fetch data from Cast4All API."""
-        if not self._measurement_map:
-            await self._discover_measurements()
-
         try:
+            if not self._measurement_map:
+                await self._discover_measurements()
+
             measurements = await self.api.get_measurements(self.installation_id)
         except Cast4AllAuthError as err:
             raise ConfigEntryAuthFailed(str(err)) from err
         except (Cast4AllApiError, Cast4AllConnectionError) as err:
             raise UpdateFailed(f"Failed to fetch data: {err}") from err
+        except Exception as err:
+            _LOGGER.exception("Unexpected error fetching Cast4All data")
+            raise UpdateFailed(f"Unexpected error: {err}") from err
 
         # Build lookup by external ID
         by_id: dict[str, dict] = {}
